@@ -25,20 +25,20 @@ class FriendForm extends React.Component {
 
         // implicit return of the object version
 
-        // event.persist();
-        // this.setState(prevState => ({
-        //     friend: {
-        //         ...prevState.friend,
-        //         [event.target.name]: event.target.value
-        //     }
-        // }));
-
-        this.setState({
+        event.persist();
+        this.setState(prevState => ({
             friend: {
-                ...this.state.friend,
+                ...prevState.friend,
                 [event.target.name]: event.target.value
             }
-        })
+        }));
+
+        // this.setState({
+        //     friend: {
+        //         ...this.state.friend,
+        //         [event.target.name]: event.target.value
+        //     }
+        // })
     };
 
     // onSubmit function here:
