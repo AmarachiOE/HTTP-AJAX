@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
+
 
 // Build a form to gather the data we need to make a post request
 
@@ -39,6 +41,7 @@ class FriendForm extends React.Component {
         })
     };
 
+    // onSubmit function here:
     // extracted addItem function from onSubmit to add more functionality and organization
     // after submitting form, clear input fields
     addFriend = (event) => {
@@ -50,11 +53,15 @@ class FriendForm extends React.Component {
             }
         })
         this.props.addFriend(event, this.state.friend)
+        // redirect to shop under post request in App.js
     }
 
     render() {
         return (
             <div>
+                <nav>
+                    <NavLink to="/">Home</NavLink>
+                </nav>
                 <h2>Add New Friend</h2>
                 <form className="friend-form" onSubmit={this.addFriend}>
                     <input

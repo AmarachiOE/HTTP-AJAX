@@ -1,5 +1,7 @@
 import React from "react";
 import Friend from "./Friend";
+import { NavLink } from "react-router-dom";
+
 
 const FriendsList = props => {
   return (
@@ -8,6 +10,7 @@ const FriendsList = props => {
       {props.friends.map(friend => (
         <Friend friend={friend} key={friend.id} />
       ))}
+      <NavLink to="/friend-form">Add a Friend</NavLink>
     </div>
   );
 };
