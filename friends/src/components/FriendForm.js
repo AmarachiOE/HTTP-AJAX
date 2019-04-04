@@ -15,33 +15,57 @@ class FriendForm extends React.Component {
         }
     };
 
+    changeHandler = event => { //implicit binding of this using arrow syntax
+        // Dealing with a nested object on state (friend):
+        // Inside setState, update friend with a new object (using prevState as a cb ??)
+        // Spread in the properties from the old "friend" object in state (...prevState.friend ??),
+        // Update/over-write the one field you're trying to update
+
+        // implicit return of the object version
+
+        // event.persist();
+        // this.setState(prevState => ({
+        //     friend: {
+        //         ...prevState.friend,
+        //         [event.target.name]: event.target.value
+        //     }
+        // }));
+
+        this.setState({
+            friend: {
+                ...this.state.friend,
+                [event.target.name]: event.target.value
+            }
+        })
+    };
+
     render() {
         return (
             <div>
                 <h2>Add New Friend</h2>
-                <form className="friend-form">
+                <form className="friend-form" onSubmit={(event) => this.props.addFriend(event, this.state.friend)}>
                     <input
-                        type="text"
+                        type="string"
                         name="name"
                         value={this.state.friend.name}
-                        onChange={this.handleChanges}
+                        onChange={this.changeHandler}
                         placeholder="What's their name?"
                     />
                     <input
                         type="number"
                         name="age"
                         value={this.state.friend.age}
-                        onChange={this.handleChanges}
+                        onChange={this.changeHandler}
                         placeholder="What's their age?"
                     />
                     <input
-                        type="text"
+                        type="string"
                         name="email"
                         value={this.state.friend.email}
-                        onChange={this.handleChanges}
+                        onChange={this.changeHandler}
                         placeholder="What's their email?"
                     />
-                   
+
                     <button className="friend-form-button">Add Friend</button>
                 </form>
             </div>

@@ -14,6 +14,18 @@ class App extends Component {
     };
   }
 
+  addFriend = (event, friend) => {
+    event.preventDefault();
+    axios.post("http://localhost:5000/friends", friend) // friend is the body of data needed to be passed in from FriendForm bc that's where addFriend is invoked
+    .then(res => {
+      console.log(res);
+      this.setState({ friends:res.data });
+    })
+    .catch(err => {
+      console.log(err.resolve)
+    })
+  }
+
   componentDidMount() {
     // visit http://localhost:5000/friends to look at data being requested
     axios.get("http://localhost:5000/friends").then(res => {
@@ -27,10 +39,16 @@ class App extends Component {
       <div className="App">
         <Route 
           path="/" 
-          render={props => <FriendsList {...props} friends={this.state.friends}/> }/>
+          render={props => 
+            <FriendsList {...props} friends={this.state.friends}
+            /> 
+          }/>
         <Route 
           path="/friend-form" 
-          render={props => <FriendForm {...props} /> }/>
+          render={props => 
+            <FriendForm {...props} addFriend={this.addFriend}
+            /> 
+          }/>
       </div>
     );
   }
