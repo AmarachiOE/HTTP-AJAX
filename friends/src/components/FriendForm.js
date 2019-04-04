@@ -39,11 +39,24 @@ class FriendForm extends React.Component {
         })
     };
 
+    // extracted addItem function from onSubmit to add more functionality and organization
+    // after submitting form, clear input fields
+    addFriend = (event) => {
+        this.setState({
+            friend: {
+                name: "",
+                age: "",
+                email: "",
+            }
+        })
+        this.props.addFriend(event, this.state.friend)
+    }
+
     render() {
         return (
             <div>
                 <h2>Add New Friend</h2>
-                <form className="friend-form" onSubmit={(event) => this.props.addFriend(event, this.state.friend)}>
+                <form className="friend-form" onSubmit={this.addFriend}>
                     <input
                         type="string"
                         name="name"

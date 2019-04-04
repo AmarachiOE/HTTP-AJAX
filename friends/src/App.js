@@ -20,6 +20,7 @@ class App extends Component {
     .then(res => {
       console.log(res);
       this.setState({ friends:res.data });
+      alert('Congrats! You\'ve added a new friend!');
     })
     .catch(err => {
       console.log(err.resolve)
