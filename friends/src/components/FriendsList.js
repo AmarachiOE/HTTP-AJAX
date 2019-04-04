@@ -1,6 +1,6 @@
 import React from "react";
 import Friend from "./Friend";
-import { NavLink } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 
 
 const FriendsList = props => {
@@ -11,7 +11,8 @@ const FriendsList = props => {
         <Friend 
           friend={friend} 
           key={friend.id}
-          deleteFriend={props.deleteFriend} />
+          deleteFriend={props.deleteFriend}
+          setActiveFriend={props.setActiveFriend} />
         
       ))}
       <NavLink to="/friend-form">Add a Friend</NavLink>
