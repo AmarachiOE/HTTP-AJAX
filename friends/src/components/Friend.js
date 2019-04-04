@@ -11,3 +11,5 @@ const Friend = props => {
 };
 
 export default Friend;
+
+// DID NOT USE THIS COMPONENT
