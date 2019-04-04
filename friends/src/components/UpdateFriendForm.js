@@ -31,7 +31,7 @@ class UpdateFriendForm extends React.Component {
         return (
             <div>
                 <nav>
-                    <NavLink to="/">Home</NavLink>
+                <NavLink to="/friend-list">Friend List</NavLink>
                 </nav>
                 <h2>Update Friend</h2>
                 <form className="friend-form" onSubmit={this.updateFriend}>

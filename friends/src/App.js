@@ -4,6 +4,7 @@ import axios from "axios";
 
 import "./App.css";
 import FriendsList from "./components/FriendsList";
+import Friend from "./components/Friend";
 import FriendForm from "./components/FriendForm";
 import UpdateFriendForm from "./components/UpdateFriendForm";
 
@@ -36,9 +37,9 @@ class App extends Component {
         this.setState({ friends: res.data });
         alert('Congrats! You\'ve added a new friend!');
 
-        // redirect to friend's list/homepage:
+        // redirect to friend's list:
         // withRouter for App on index
-        this.props.history.push("/");
+        this.props.history.push("/friend-list");
       })
       .catch(err => {
         console.log(err.resolve)
@@ -69,8 +70,8 @@ class App extends Component {
         this.setState({
           friends: res.data
         });
-        // redirect to friend's list/homepage:
-        this.props.history.push("/");
+        // redirect to friend's list:
+        this.props.history.push("/friend-list");
       })
       .catch(err => {
         console.log(err.resolve);
@@ -88,15 +89,23 @@ class App extends Component {
     return (
       <div className="App">
         <Route
-          exact path="/"
+          exact path="/friend-list"
           render={props =>
             <FriendsList 
               {...props} 
               friends={this.state.friends} 
-              deleteFriend={this.deleteFriend}
-              setActiveFriend={this.setActiveFriend}
             />
           } />
+        <Route
+          path="/friend-list/:id"
+          render={props => (
+            <Friend 
+            {...props}
+          friends={this.state.friends} 
+          deleteFriend={this.deleteFriend}
+          setActiveFriend={this.setActiveFriend} />
+          )}
+        />
         <Route
           path="/friend-form"
           render={props =>

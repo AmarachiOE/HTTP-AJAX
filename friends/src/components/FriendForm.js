@@ -68,7 +68,7 @@ class FriendForm extends React.Component {
         return (
             <div>
                 <nav>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/friend-list">Friend List</NavLink>
                 </nav>
                 <h2>Add New Friend</h2>
                 {/* alternately: onSubmit={this.handleSubmit} */}
