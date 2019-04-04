@@ -20,7 +20,7 @@ const Friend = props => {
   const updateFriend = event => {
     event.preventDefault();
     props.setActiveFriend(friend);
-    props.history.push("/update-form"); //add this app.js?
+    props.history.push("/update-form");
   }
 
   return (

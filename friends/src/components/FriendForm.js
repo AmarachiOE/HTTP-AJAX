@@ -42,11 +42,10 @@ class FriendForm extends React.Component {
     };
 
     // onSubmit function here:
-    // extracted addItem function from onSubmit to add more functionality and organization
+    // extracted handleSubmit function from onSubmit to add more functionality and organization
     // after submitting form, clear input fields
     // would be handleSubmit fn on trinkets sandbox
-    // can be named handleSubmit to avoid confusion
-    addFriend = (event) => {
+    handleSubmit = (event) => {
         //event.preventDefault(); done on app.js
 
         // invoke addFriend function from App.js
@@ -72,7 +71,7 @@ class FriendForm extends React.Component {
                 </nav>
                 <h2>Add New Friend</h2>
                 {/* alternately: onSubmit={this.handleSubmit} */}
-                <form className="friend-form" onSubmit={this.addFriend}> 
+                <form className="friend-form" onSubmit={this.handleSubmit}> 
                     <input
                         type="string"
                         name="name"

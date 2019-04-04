@@ -7,7 +7,7 @@ class UpdateFriendForm extends React.Component {
         friend: this.props.activeFriend,
     };
 
-    changeHandler = event => { 
+    changeHandler = event => {
 
         // implicit return of the object version
         event.persist();
@@ -20,21 +20,21 @@ class UpdateFriendForm extends React.Component {
     };
 
 
-    updateFriend = (event) => {
-        //event.preventDefault(); done on app.js
+    handleSubmit = (event) => {
+        event.preventDefault(); 
 
         // invoke updateFriend function from App.js
-        this.props.updateFriend(event, this.state.friend)
+        this.props.updateFriend(this.state.friend);
     }
 
     render() {
         return (
             <div>
                 <nav>
-                <NavLink to="/friend-list">Friend List</NavLink>
+                    <NavLink to="/friend-list">Friend List</NavLink>
                 </nav>
                 <h2>Update Friend</h2>
-                <form className="friend-form" onSubmit={this.updateFriend}>
+                <form className="friend-form" onSubmit={this.handleSubmit}>
                     <input
                         type="string"
                         name="name"
