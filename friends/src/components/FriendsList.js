@@ -1,12 +1,12 @@
 import React from "react";
 //import Friend from "./Friend";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const FriendsList = props => {
   return (
-    <div className="FriendsList-container">
-      <h2>List of Friends:</h2>
+    <div className="friendsList-container">
+      <h1>List of Friends:</h1>
       {props.friends.map(friend => (
         <h3 key={friend.id}>
           <Link to={`/friend-list/${friend.id}`}> {friend.name}, {friend.age}</Link>  
@@ -18,7 +18,10 @@ const FriendsList = props => {
         //   setActiveFriend={props.setActiveFriend} />
         
       ))}
-      <NavLink to="/friend-form">Add a Friend</NavLink>
+      <div className="add-friend-btn-div">
+      <Link to="/friend-form" className="add-friend-btn">Add a Friend</Link>
+      </div>
+      
     </div>
   );
 };

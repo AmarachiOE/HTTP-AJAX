@@ -29,7 +29,7 @@ class UpdateFriendForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="friend-form-container">
                 <nav>
                     <NavLink to="/friend-list">Friend List</NavLink>
                 </nav>

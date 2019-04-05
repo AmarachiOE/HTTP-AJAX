@@ -1,3 +1,135 @@
 .App {
   text-align: center;
+  /* background: lightblue; */
+  /* background-image: url("./images/cool-background.png"); */
+  background-repeat: no-repeat;
+  /* background-position: right top; */
+  /* background-attachment: fixed; */
+  background: linear-gradient(-100deg, #fa7c30 30%, yellow 20%, rgba(0, 0, 0, 0) 30%), url("./images/cool-background.png");
+  width: 100%;
+  height: 100vh;
+  padding: 50px 0;
 }
+
+.friendsList-container {
+  margin: 10% auto;
+  width: 60%;
+  height: auto;
+  background: white;
+  border-radius: 10px;
+  /* horizontal, vertical, blur, color */
+  box-shadow: 6px 6px 3px rgb(39, 38, 38);
+  padding-bottom: 10px;
+}
+
+.friendsList-container h1 {
+  padding: 40px 0;
+  background: rgb(179, 4, 77);
+  border-radius: 10px;
+  color: white;
+}
+
+.friendsList-container h3 {
+  color: rgb(179, 4, 77);
+  text-decoration: none;
+  margin: 15px auto;
+  height: 40px;
+  width: 60%;
+  background: rgb(236, 236, 236);
+  box-shadow: 2px 3px 3px rgb(184, 183, 183);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.friendsList-container h3 a {
+  color: rgb(179, 4, 77);
+  text-decoration: none;
+}
+
+.friendsList-container h3 a:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.add-friend-btn-div {
+  width: 200px;
+  height: 50px;
+  background: navy;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px black;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+/* added color, size, and weight here for form button */
+}
+.add-friend-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.add-friend-btn:hover {
+  cursor: pointer;
+}
+
+.friend-form-container {
+  margin: 10% auto;
+  width: 60%;
+  height: 70%;
+  background: white;
+  border-radius: 10px;
+  /* horizontal, vertical, blur, color */
+  box-shadow: 6px 6px 3px rgb(39, 38, 38);
+}
+
+.friend-form-container h1 {
+  padding: 40px 0;
+  background: rgb(179, 4, 77);
+  color: white;
+}
+
+.friend-form-container .friend-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.friend-form-container .friend-form input {
+  margin-bottom: 20px;
+  border: none;
+  height: 40px;
+  width: 60%;
+  background: rgb(236, 236, 236);
+  box-shadow: 2px 3px 3px rgb(184, 183, 183);
+  border-radius: 5px;
+  padding-left: 12px;
+  font-size: 1.1rem;
+
+
+}
+
+.friend-form-container nav  {
+  padding-top: 10px;
+ }
+
+.friend-form-container nav a {
+ text-decoration: none;
+ font-size: 1.2rem;
+ padding-top: 10px;
+ color: navy;
+ font-weight: bold;
+}
+
+.friend-form-container nav a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: orange;
+ }

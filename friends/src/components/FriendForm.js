@@ -65,11 +65,11 @@ class FriendForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="friend-form-container">
                 <nav>
-                    <NavLink to="/friend-list">Friend List</NavLink>
+                    <NavLink to="/friend-list">Back to Friend List</NavLink>
                 </nav>
-                <h2>Add New Friend</h2>
+                <h1>Add New Friend</h1>
                 {/* alternately: onSubmit={this.handleSubmit} */}
                 <form className="friend-form" onSubmit={this.handleSubmit}> 
                     <input
@@ -94,7 +94,8 @@ class FriendForm extends React.Component {
                         placeholder="What's their email?"
                     />
 
-                    <button className="friend-form-button">Add Friend</button>
+                    <button className="add-friend-btn-div">Add Friend</button>
+                
                 </form>
             </div>
         )
